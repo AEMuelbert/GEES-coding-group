@@ -1,0 +1,61 @@
+---
+title: "Daymet Analyses"
+author: "Alexander Hurley"
+date: "2/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+## Intro
+
+`drake` is cool!
+
+# Methods
+
+```{r echo=FALSE}
+loadd(daymet_clean)
+
+```
+
+
+Download data. In total we have `r nrow(daymet_clean)` observations from `r dplyr::n_distinct(daymet_clean$site)` sites!
+
+# Results
+
+Annual data fluctuates:
+
+```{r echo=FALSE}
+
+readd(plot_all_sites) # readd "executes" automatically
+
+
+```
+
+And trends in June were unclear:
+
+
+```{r echo=FALSE}
+
+readd(plot_june_models) 
+
+
+```
+
+```{r}
+loadd(iris_data)
+
+iris_data %>% head()
+```
+
+
+# Discussion
+
+We need more work, but `drake` is still cool. 
+
+# Conclusion
+
+We should check out `targets`, though.
